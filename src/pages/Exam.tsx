@@ -255,18 +255,18 @@ export default function Exam() {
             })}
           </div>
 
-          {/* NAVIGATION FOOTER */}
+{/* NAVIGATION FOOTER */}
           <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-6">
             
             <button
               onClick={previousQuestion}
               disabled={currentQuestion === 0}
-              className="w-full md:w-auto bg-gradient-to-r from-indigo-600 to-blue-700 text-white px-8 py-3 rounded-2xl font-bold shadow-[0_4px_15px_rgba(79,70,229,0.4)] hover:brightness-110 transition-all active:scale-95 disabled:opacity-40 disabled:grayscale flex items-center justify-center gap-2 hover:scale-105"
+              className="order-3 md:order-1 w-full md:w-auto bg-gradient-to-r from-indigo-600 to-blue-700 text-white px-8 py-3 rounded-2xl font-bold shadow-[0_4px_15px_rgba(79,70,229,0.4)] hover:brightness-110 transition-all active:scale-95 disabled:opacity-40 disabled:grayscale flex items-center justify-center gap-2 hover:scale-105"
             >
               <span className="text-xl leading-none -mt-1 pointer-events-none">‹</span> Previous
             </button>
 
-            <div className="scale-100 md:scale-110">
+            <div className="order-2 scale-100 md:scale-110">
               <QuestionNavigator
                 totalQuestions={questions.length}
                 currentQuestion={currentQuestion}
@@ -279,14 +279,14 @@ export default function Exam() {
             {currentQuestion === questions.length - 1 ? (
               <button
                 onClick={submitExam}
-                className="w-full md:w-auto bg-gradient-to-r from-emerald-500 to-emerald-950 text-white px-8 py-3 rounded-2xl font-bold shadow-[0_4px_15px_rgba(16,185,129,0.4)] hover:brightness-110 transition-all active:scale-95 hover:scale-105"
+                className="order-1 md:order-3 w-full md:w-auto bg-gradient-to-r from-emerald-500 to-emerald-950 text-white px-8 py-3 rounded-2xl font-bold shadow-[0_4px_15px_rgba(16,185,129,0.4)] hover:brightness-110 transition-all active:scale-95 hover:scale-105"
               >
                 Submit Exam
               </button>
             ) : (
               <button
                 onClick={nextQuestion}
-                className="w-full md:w-auto bg-gradient-to-r from-indigo-600 to-blue-700 text-white px-8 py-3 rounded-2xl font-bold shadow-[0_4px_15px_rgba(79,70,229,0.4)] hover:brightness-110 transition-all active:scale-95 flex items-center justify-center gap-2 hover:scale-105"
+                className="order-1 md:order-3 w-full md:w-auto bg-gradient-to-r from-indigo-600 to-blue-700 text-white px-8 py-3 rounded-2xl font-bold shadow-[0_4px_15px_rgba(79,70,229,0.4)] hover:brightness-110 transition-all active:scale-95 flex items-center justify-center gap-2 hover:scale-105"
               >
                 Next <span className="text-xl leading-none -mt-1 pointer-events-none">›</span>
               </button>
@@ -294,18 +294,18 @@ export default function Exam() {
           </div>
         </div>
 
-        {/* BOTTOM LEGEND PILL */}
-        <div className="bg-white rounded-full shadow-sm border border-slate-100 px-8 py-3 flex gap-8 mt-8 justify-center max-w-fit mx-auto text-sm font-semibold text-slate-600 pointer-events-none">
-          <div className="flex items-center gap-2">
-            <div className="w-3.5 h-3.5 rounded-full bg-gradient-to-br from-emerald-300 to-emerald-600 shadow-md shadow-emerald-500/40 border border-emerald-200"></div> Answered
+          {/* BOTTOM LEGEND PILL */}
+          <div className="bg-white rounded-full shadow-sm border border-slate-100 px-8 py-3 flex gap-8 mt-8 justify-center max-w-fit mx-auto text-sm font-semibold text-slate-600 pointer-events-none">
+            <div className="flex items-center gap-2">
+              <div className="w-3.5 h-3.5 rounded-full bg-gradient-to-br from-emerald-300 to-emerald-600 shadow-md shadow-emerald-500/40 border border-emerald-200"></div> Answered
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3.5 h-3.5 rounded-full bg-gradient-to-br from-orange-300 to-orange-600 shadow-md shadow-orange-500/40 border border-orange-200"></div> Flagged
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3.5 h-3.5 rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 shadow-md shadow-indigo-500/40 border border-indigo-200"></div> Current
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3.5 h-3.5 rounded-full bg-gradient-to-br from-orange-300 to-orange-600 shadow-md shadow-orange-500/40 border border-orange-200"></div> Flagged
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3.5 h-3.5 rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 shadow-md shadow-indigo-500/40 border border-indigo-200"></div> Current
-          </div>
-        </div>
 
       </div>
     </div>
