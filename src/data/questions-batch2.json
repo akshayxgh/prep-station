@@ -1,0 +1,702 @@
+[
+  {
+    "id": "PD015",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You need to extract data from an on-premises Oracle database, transform it using Power Query, and load it directly into a Fabric Lakehouse as a Delta table. You want to accomplish this entirely within the Power BI / Fabric cloud service without using Power BI Desktop. Which tool should you use?",
+    "options": [
+      "Dataflows Gen1",
+      "Dataflows Gen2",
+      "Power BI Datamarts",
+      "SQL Analytics Endpoint"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD016",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You are configuring incremental refresh for a large Fact table in Power BI Desktop. You have defined the RangeStart and RangeEnd parameters. What is a mandatory requirement for these parameters before you can successfully apply the incremental refresh policy?",
+    "options": [
+      "They must be set to the Date data type.",
+      "They must be set to the Date/Time data type.",
+      "They must be mapped directly to the primary key of the table.",
+      "They must represent a minimum span of one year."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD017",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Hard",
+    "question": "In Microsoft Fabric, you are working with a Lakehouse that contains raw Parquet files in the 'Files' section. You need these files to be available in the SQL Analytics Endpoint so that you can query them using T-SQL and build a Power BI semantic model. What action must you take?",
+    "options": [
+      "Move the files to the 'Tables' section and load them as Delta tables.",
+      "Change the storage mode to DirectQuery.",
+      "Use a Fabric Data Pipeline to copy them into an Azure SQL Database.",
+      "Export the files as CSVs and import them via Dataflows."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "PD018",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You have structured relational data requiring complex multi-table transactional updates (DML operations like INSERT, UPDATE, DELETE) executed via T-SQL. You want this data to seamlessly integrate with Power BI's Direct Lake mode. Which Fabric item is best suited as the primary storage layer?",
+    "options": [
+      "Fabric Lakehouse",
+      "Fabric Warehouse",
+      "Power BI Datamart",
+      "KQL Database"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD019",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You need to orchestrate a nightly data load where a Stored Procedure is executed on an Azure SQL Database, and upon success, a Power BI semantic model is refreshed automatically. What is the most appropriate native Fabric tool to build this workflow?",
+    "options": [
+      "Power Automate",
+      "Dataflows Gen2",
+      "Fabric Data Pipelines",
+      "SQL Server Agent"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "PD020",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Hard",
+    "question": "You are connected to an Azure SQL Database in Power Query. You apply a 'Keep Top Rows' step, followed by an 'Add Custom Column' step containing complex M logic, and finally a 'Filter Rows' step. Performance is very slow. How can you maximize query folding?",
+    "options": [
+      "Move the 'Filter Rows' step to be evaluated before the 'Add Custom Column' step.",
+      "Replace 'Keep Top Rows' with a DAX TOPN calculation.",
+      "Use the Table.Buffer function immediately after connecting to the database.",
+      "Change the data type of the custom column to Text."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "PD021",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Hard",
+    "question": "You are querying a REST API that returns a maximum of 100 records per request. You need to extract all 5,000 available records. How should you handle this pagination within Power Query?",
+    "options": [
+      "Change the API URL to include '?limit=5000' to force a complete download.",
+      "Use the List.Generate function to iteratively call the API until no more records are returned.",
+      "Create 50 separate blank queries and append them together manually.",
+      "Use the Power BI incremental refresh feature to pull 100 records per day."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD022",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Easy",
+    "question": "While using the Column Distribution feature in Power Query Editor, you notice that a supposedly unique 'TransactionID' column shows 1,000 count, 950 distinct values, and 100 unique values. What does this indicate?",
+    "options": [
+      "The column has 10 null values.",
+      "There are 100 values that appear exactly once, and the remaining 850 distinct values appear multiple times.",
+      "The column is missing 10 sequential IDs.",
+      "10 transactions have a blank string instead of an ID."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD023",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You dynamically combine the contents of three text columns (FirstName, MiddleName, LastName) into a single FullName column. However, the MiddleName column contains null values for many rows. Which M function ensures that no extra string spaces or null errors are produced when combining these elements?",
+    "options": [
+      "Text.Combine",
+      "Text.Insert",
+      "Text.Format",
+      "Text.Remove"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "PD024",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Easy",
+    "question": "You have taken over a Power BI Desktop file from a departed colleague. When you click 'Refresh', you receive an authentication error for a SharePoint Online list. Where must you go to clear the old credentials and enter your own?",
+    "options": [
+      "Power Query Editor > Advanced Editor",
+      "File > Options and settings > Data source settings",
+      "Model View > Properties Pane",
+      "Power BI Service > Gateway connection settings"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD025",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You are using Dataflows Gen2 to ingest data into a Fabric Lakehouse. You want the destination table to be completely wiped and re-populated every time the dataflow runs. Which update method should you configure in the data destination settings?",
+    "options": [
+      "Append",
+      "Replace",
+      "Upsert",
+      "Merge"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD026",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "When configuring incremental refresh on a table, you enable the 'Detect data changes' option. What is required in the source data for this feature to function correctly?",
+    "options": [
+      "A surrogate key column.",
+      "A Date/Time column that indicates when a row was last updated.",
+      "A clustered columnstore index on the source table.",
+      "An active relationship to a Date dimension table."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD027",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Hard",
+    "question": "In Power Query, you right-click a transformation step and the 'View Native Query' option is grayed out. What is the most accurate conclusion?",
+    "options": [
+      "Query folding has definitely stopped at this step.",
+      "You must first publish the dataset to Power BI Service to view the native query.",
+      "The step might still be folding, as some sources (like OData) do not surface the native query in the UI.",
+      "You need to enable the 'Require user approval for new native database queries' security setting."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "PD028",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You have a column containing string values structured as 'Year-Month-Day' (e.g., '2025-06-19'). You need to convert this into a true Date type in Power Query, but the standard 'Change Type' operation produces errors due to regional settings. Which M function should you use to specify the exact format string?",
+    "options": [
+      "Date.FromText",
+      "DateTime.Parse",
+      "Text.ToDate",
+      "Table.TransformColumnTypes"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "MD015",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "You are connecting to an enterprise Power BI semantic model using a live connection. You need to add a local Excel file containing custom departmental targets and create a relationship between it and the enterprise model. What action must you take first?",
+    "options": [
+      "Publish the Excel file to a Fabric Lakehouse.",
+      "Convert the live connection into a DirectQuery connection by making changes to this model.",
+      "Import the enterprise semantic model entirely into your local file.",
+      "Change the storage mode of the Excel file to DirectQuery."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD016",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "Your semantic model is using Direct Lake mode to query a Delta table in Fabric. If the VertiPaq engine determines that a specific DAX query is too complex and cannot be served directly from memory, what is the default fallback behavior?",
+    "options": [
+      "The query fails and returns a timeout error.",
+      "The engine falls back to DirectQuery mode to read the Delta files using the SQL endpoint.",
+      "The engine automatically switches the table to Import mode.",
+      "The query returns partial data with a warning icon."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD017",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "You have a DirectQuery fact table containing 10 billion rows of transaction data. To improve report performance, you create an Import table containing aggregated monthly sales data. How do you ensure Power BI automatically queries the smaller Import table when users look at monthly trends, without changing the DAX measures?",
+    "options": [
+      "Configure User-Defined Aggregations and map the GroupBy columns.",
+      "Use the USERELATIONSHIP function in all your DAX measures.",
+      "Create a Calculation Group to switch between the two tables.",
+      "Set the cross-filter direction to 'Both' between the fact and aggregated tables."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "MD018",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "You have implemented a Calculation Group named 'Time Intelligence' with calculation items like 'YTD' and 'MTD'. In your report, you place a base measure (Total Sales) in a visual and use a slicer for the Calculation Group. What DAX function is inherently applied by the calculation items to dynamically reference and modify whichever base measure is passed to it?",
+    "options": [
+      "SELECTEDMEASURE()",
+      "ISFILTERED()",
+      "HASONEVALUE()",
+      "KEEPFILTERS()"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "MD019",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "While analyzing a slow DAX query in DAX Studio or Performance Analyzer, you notice that 95% of the execution time is spent in the Formula Engine, with a massive number of distinct Storage Engine queries generated. What does this typically indicate?",
+    "options": [
+      "The model is highly optimized and using VertiPaq compression efficiently.",
+      "There is an over-reliance on complex, row-by-row calculations (iterators) or severe context transition bottlenecks.",
+      "The dataset is too small to utilize the Storage Engine.",
+      "The DirectQuery connection string is misconfigured."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD020",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Easy",
+    "question": "You want to optimize the memory footprint of your Import mode semantic model. You have an 'Order Timestamp' column containing the exact date, hour, minute, and second of each transaction. You only need to report on daily sales trends. What is the most effective optimization technique?",
+    "options": [
+      "Change the data type to Text to improve compression.",
+      "Split the column into two separate columns: Date and Time, or remove the time component entirely if not needed.",
+      "Wrap the column in a CALCULATE function.",
+      "Set the column's default summarization to 'Do Not Summarize'."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD021",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "You have a measure 'Total Sales = SUM(Sales[Amount])'. You want to create a new measure that calculates sales only for 'Store A', completely ignoring any user slicer selections made on the Store Name column. Which DAX formula achieves this by overwriting the existing filter context?",
+    "options": [
+      "CALCULATE([Total Sales], KEEPFILTERS(Store[StoreName] = \"Store A\"))",
+      "CALCULATE([Total Sales], Store[StoreName] = \"Store A\")",
+      "CALCULATE([Total Sales], FILTER(Store, Store[StoreName] = \"Store A\"))",
+      "CALCULATE([Total Sales], ALLSELECTED(Store[StoreName]))"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD022",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "You have a data model with two tables: FactBudget and DimDate. There is no physical relationship between them. You want to calculate the total budget amount filtered by the current selection in the DimDate table at the Year level. Which DAX function allows you to propagate this virtual relationship dynamically?",
+    "options": [
+      "CROSSFILTER",
+      "USERELATIONSHIP",
+      "TREATAS",
+      "RELATEDTABLE"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MD023",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "In your model, DimEmployee has a one-to-many relationship with FactSales (single cross-filter direction). You need to write a DAX measure to count the number of unique employees who have made at least one sale in a given period, without permanently changing the physical relationship to bidirectional. Which function should you include in your CALCULATE statement?",
+    "options": [
+      "CROSSFILTER(DimEmployee[EmployeeKey], FactSales[EmployeeKey], Both)",
+      "USERELATIONSHIP(DimEmployee[EmployeeKey], FactSales[EmployeeKey])",
+      "TREATAS(VALUES(FactSales[EmployeeKey]), DimEmployee[EmployeeKey])",
+      "ALLCROSSFILTERED(FactSales)"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "MD024",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "Which of the following DAX functions is notoriously known for relying heavily on the single-threaded Formula Engine rather than the multi-threaded Storage Engine, potentially causing performance bottlenecks over large datasets?",
+    "options": [
+      "SUM",
+      "MAX",
+      "XIRR",
+      "DIVIDE"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MD025",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "You have a table visual with 'Category' on the rows and a measure 'Percent of Total'. You want the denominator to represent the sum of sales for only the categories actively selected in a visual slicer, ensuring the percentages always add up to 100% within the visual. Which DAX function should you use for the denominator?",
+    "options": [
+      "ALL(Category)",
+      "ALLEXCEPT(Category, Category[CategoryName])",
+      "ALLSELECTED(Category)",
+      "REMOVEFILTERS(Category)"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MD029",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "You implement Object-Level Security (OLS) on a semantic model to completely hide the 'Payroll' table from standard users. A standard user opens a report that contains a card visual relying on a measure from the 'Payroll' table. What is the expected behavior for that user?",
+    "options": [
+      "The card visual returns a value of zero or blank.",
+      "The entire report fails to load.",
+      "The card visual displays an error stating the object does not exist or they do not have permissions.",
+      "The user is prompted to enter an administrator password."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MD026",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "When using DAX Query View to optimize a query, you enable the inclusion of execution metrics. Which metric helps you identify if the VertiPaq engine had to fall back to a slower execution path involving the Formula Engine iterating over complex uncompressed data?",
+    "options": [
+      "Total execution time under 100 milliseconds.",
+      "A large number of 'CallbackDataID' operations.",
+      "Zero logical reads from VertiPaq.",
+      "High CPU Time in the Storage Engine."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD027",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "You configure a Fabric Lakehouse and build a Direct Lake semantic model. Users complain that performance suddenly drops during peak hours. You suspect the model is exceeding the memory limits of your Fabric capacity. What happens to a Direct Lake model when the capacity memory limit is breached?",
+    "options": [
+      "It automatically pauses the capacity.",
+      "It purges the least recently used columns from memory (page out) and may fall back to DirectQuery to fetch data.",
+      "It permanently converts all tables to Import mode.",
+      "It shuts down the Power BI Service workspace for all users."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD028",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Easy",
+    "question": "You are defining a dynamic format string DAX expression directly on a 'Sales' measure. You want to format the value as Millions ('0.0,,M') if the sales are over 1,000,000, and Thousands ('0.0,K') otherwise. How do you reference the numerical result of the measure within this native dynamic format string DAX expression?",
+    "options": [
+      "By using the VALUE() function.",
+      "By writing the exact measure name, such as [Sales].",
+      "By using the CURRENTVALUE() function.",
+      "By using the FORMAT() function."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA015",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "You are building a matrix visual showing monthly revenue. You want to add a column that calculates the month-over-month growth percentage. Using the new Visual Calculations feature, which DAX function allows you to reference the revenue value from the previous row strictly within the visual's layout?",
+    "options": [
+      "PREVIOUSMONTH()",
+      "PREVIOUS()",
+      "DATEADD()",
+      "EARLIER()"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA016",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Hard",
+    "question": "You have a measure named 'Total Value'. Depending on the country selected, it should display as a currency, or if 'Global' is selected, it should display as a standard decimal number without currency symbols. How can you accomplish this natively on the measure without Calculation Groups?",
+    "options": [
+      "Create a calculated column with an IF statement returning text strings.",
+      "Use the 'Dynamic format string for measures' feature to write a DAX expression that outputs the correct format code.",
+      "Apply conditional formatting to the background color of the visual.",
+      "Use the FORMAT function inside the measure, converting the numerical result to text."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA017",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Easy",
+    "question": "You publish a report to your business users, but different users prefer to view the data differently (e.g., changing a bar chart to a pie chart, or swapping a category axis). You want to empower them to make these changes in the Power BI Service without giving them edit access to the report. Which feature must you enable?",
+    "options": [
+      "Copilot for Power BI",
+      "Edit Interactions",
+      "Personalize visuals",
+      "Analyze in Excel"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "VA018",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Easy",
+    "question": "You are designing a report that will be consumed heavily by field workers using the Power BI mobile app on their smartphones. What is the recommended best practice for optimizing the mobile viewing experience in Power BI Desktop?",
+    "options": [
+      "Change the desktop page size setting to 'Custom' and use portrait dimensions.",
+      "Build a separate .pbix file specifically for mobile users.",
+      "Use the 'Mobile layout' view to drag and drop existing visuals onto a phone-optimized canvas.",
+      "Export the desktop report as a mobile-friendly PDF."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "VA019",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "You want to use Copilot in Power BI to automatically generate a completely new report page based on your semantic model. What is a primary prerequisite for this feature to work optimally?",
+    "options": [
+      "The semantic model must be hosted on an On-Premises Data Gateway.",
+      "The semantic model must have meaningful names for tables and columns, and ideally synonyms defined in the Q&A setup.",
+      "The report must be built exclusively using DirectQuery.",
+      "The dataset must contain fewer than 10,000 rows."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA020",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Easy",
+    "question": "You add a Smart Narrative visual to a dashboard. What is the primary advantage of utilizing this visual over a standard text box?",
+    "options": [
+      "It automatically generates interactive DAX measures behind the scenes.",
+      "It allows users to write back comments directly to the underlying SQL database.",
+      "It dynamically generates text summaries and calls out trends that update automatically when filters or slicers are applied.",
+      "It reads the text aloud for visually impaired users using the OS screen reader."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "VA021",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Easy",
+    "question": "You are finalizing a dashboard for an organization with strict web accessibility guidelines. You want to ensure that users relying on screen readers understand what each visual represents, even if the default title is not descriptive enough. What property should you configure for every visual?",
+    "options": [
+      "Z-order",
+      "Alt text",
+      "Header icons",
+      "Tooltip text"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA022",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "You have a line chart displaying 'Sales by Month' and a scatter plot displaying 'Sales vs Margin by Product'. When a user selects a specific month on the line chart, you want the scatter plot to remain completely unaffected. How do you configure this?",
+    "options": [
+      "Turn off 'Cross-report drillthrough' in the report settings.",
+      "Select the line chart, go to Format > Edit interactions, and click the 'None' icon above the scatter plot.",
+      "Hide the scatter plot using the Selection pane when the month is selected.",
+      "Group the two visuals together in the Selection pane."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA023",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "You implemented Field Parameters to allow users to toggle between 'Sales', 'Profit', and 'Quantity' on a bar chart. A user requests that when they select 'Quantity', the bar chart should also dynamically switch from displaying a Currency format to a Whole Number format. How does the Field Parameter handle this?",
+    "options": [
+      "It automatically inherits and applies the formatting of the underlying base measures chosen in the parameter.",
+      "You must write a dynamic format string DAX expression on the Field Parameter itself.",
+      "Field Parameters only support a single global format string across all selections.",
+      "You must use Bookmarks instead of Field Parameters to change formatting."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "VA024",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "You apply a forecast line to a time series chart in Power BI. You want the algorithm to ignore the last three months of incomplete data when generating the forecast model to prevent artificial dips. Which forecasting setting should you configure?",
+    "options": [
+      "Seasonality",
+      "Confidence interval",
+      "Ignore last",
+      "Forecast length"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "VA025",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "You have enabled Anomaly Detection on a revenue line chart. What happens when a user clicks on an identified anomaly point on the chart?",
+    "options": [
+      "Power BI opens a new browser tab with Bing search results for the anomaly date.",
+      "The data point is automatically excluded from all DAX calculations in the model.",
+      "An anomalies pane opens, providing natural language explanations and possible root causes for the anomaly.",
+      "A Data Alert is immediately triggered and sent via email."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "VA026",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Hard",
+    "question": "While using Visual Calculations, you write the formula: 'MovingAverage = MOVINGAVERAGE([Sales], 3)'. What happens if a user applies a slicer that filters out half of the data points currently visible in the matrix?",
+    "options": [
+      "The Visual Calculation breaks and returns an error.",
+      "The calculation dynamically recalculates based only on the remaining data points visible within the visual matrix.",
+      "The calculation ignores the slicer and evaluates against the entire underlying semantic model.",
+      "The visual automatically converts back to a standard DAX measure."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA027",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Easy",
+    "question": "To meet contrast ratio accessibility standards, you are modifying a report theme. Which two colors must have a high contrast ratio to ensure visually impaired users can easily consume the report?",
+    "options": [
+      "The background color and the foreground (text/data) color.",
+      "The slicer header color and the canvas wallpaper.",
+      "The tooltip background and the visual border.",
+      "The primary chart color and the secondary chart color."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "VA028",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Hard",
+    "question": "You are creating a Decomposition Tree to analyze reasons for customer churn. You want the AI to automatically determine the most significant variables contributing to churn and split the tree accordingly without manual user intervention. What option should you configure on the visual?",
+    "options": [
+      "Drillthrough filters",
+      "Enable High/Low splits using the AI bulb icon",
+      "Smart Narratives generation",
+      "Field Parameters on the 'Explain by' bucket"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MS009",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Easy",
+    "question": "Your organization requires that all Power BI items published to the 'Finance Prod' workspace must reside on Premium capacity to handle large data volumes and allow free users to view reports. As a workspace administrator, how do you verify and configure this?",
+    "options": [
+      "Open the Workspace settings, go to the Premium tab, and assign the workspace to a Fabric capacity or Premium capacity.",
+      "Change the semantic model storage mode to Direct Lake.",
+      "Assign a Power BI Pro license to every user in the Finance department.",
+      "Turn on the 'Large semantic model storage format' option in Power BI Desktop before publishing."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "MS010",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Hard",
+    "question": "You have a deployment pipeline set up with Dev, Test, and Prod stages. A developer makes a small update to a single measure in the Dev semantic model and publishes it. You want to move this specific change to Prod without overwriting the entire Prod model and risking data refresh interruptions. What feature should you use?",
+    "options": [
+      "Data source rules in the deployment pipeline.",
+      "Selective item deployment in the Power BI deployment pipeline.",
+      "XMLA endpoint schema compare using external tools (e.g., ALM Toolkit).",
+      "The 'Update app' functionality in the workspace."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MS012",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Medium",
+    "question": "You are building a Fabric data architecture. Your source database is an Azure SQL Database secured tightly behind an Azure Virtual Network (VNet) with no public internet access. You need your Power BI semantic models to refresh data from this source securely. Which connectivity solution is specifically designed for this Azure-native scenario without requiring you to manage local virtual machines?",
+    "options": [
+      "On-premises Data Gateway (Personal Mode)",
+      "On-premises Data Gateway (Standard Mode)",
+      "VNet Data Gateway",
+      "Azure ExpressRoute"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MS013",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Easy",
+    "question": "You want a business analyst to be able to connect to an existing certified semantic model in the Power BI Service via Power BI Desktop (using a Live Connection) so they can build their own custom reports. What minimum permission must they have on the semantic model?",
+    "options": [
+      "Read permission",
+      "Build permission",
+      "Reshare permission",
+      "Owner permission"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MS014",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Easy",
+    "question": "You are updating a Power BI App that contains ten reports. You have added a new audience group named 'Marketing Team'. You want this audience to only see three specific reports within the App. How do you configure this?",
+    "options": [
+      "Create a separate workspace for the Marketing Team.",
+      "In the App configuration's 'Audience' tab, hide the irrelevant reports for the 'Marketing Team' audience.",
+      "Apply Row-Level Security on the reports.",
+      "Ask the Marketing Team to only click on the three reports."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MS015",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Medium",
+    "question": "Your company uses Microsoft Purview Information Protection. You apply a 'Highly Confidential' sensitivity label to a Power BI report in the service. What happens when a user exports the report data to a Microsoft Excel file?",
+    "options": [
+      "The export is blocked entirely by default.",
+      "The Excel file inherits the 'Highly Confidential' sensitivity label and its associated protection settings.",
+      "The data is exported, but all numerical values are masked with asterisks.",
+      "The label is stripped from the file since it leaves the Power BI environment."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MS016",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Medium",
+    "question": "You are testing a complex Row-Level Security (RLS) configuration. You notice significant performance degradation because the RLS DAX filter contains several complex nested IF statements and iterator functions. What is the Microsoft recommended best practice to optimize RLS rules?",
+    "options": [
+      "Move the logic into the report level visual filters.",
+      "Increase the capacity size to Premium P3.",
+      "Pre-calculate the security mappings in the underlying data warehouse and simplify the DAX RLS filter to basic equality checks.",
+      "Convert all models to DirectQuery mode so the database handles the RLS calculations."
+    ],
+    "correctAnswer": 2
+  }
+]

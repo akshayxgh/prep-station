@@ -1,0 +1,702 @@
+[
+  {
+    "id": "PD001",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Easy",
+    "question": "You are importing high-volume transaction data from a SQL Server database into Power BI. You also need to append a small CSV file containing public holiday dates. To optimize performance and restrict the local corporate SQL Server data from being transmitted to the external web-based public CSV provider, which Power Query configuration should you use?",
+    "options": [
+      "Set the privacy level of both the SQL Server database and the CSV file to Public.",
+      "Set the privacy level of the SQL Server database to Private and the CSV file to Organizational.",
+      "Set the privacy level of the SQL Server database to Organizational and the CSV file to Public.",
+      "Disable the 'Enable Load' option for both data sources in the Power Query Editor."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "PD002",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You are constructing a query in Power Query Editor that connects to an Azure SQL Database. The query contains the following steps in sequence:\n1. Filter rows based on a specific date range.\n2. Rename three columns.\n3. Group rows by ProductID and aggregate Total Sales.\n4. Merge the query with a flat CSV file containing product descriptions.\n\nAt which step will query folding stop executing?",
+    "options": [
+      "Step 1: Filter rows",
+      "Step 2: Rename columns",
+      "Step 3: Group rows",
+      "Step 4: Merge with CSV"
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "id": "PD003",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Hard",
+    "question": "You are building a reporting solution in Microsoft Fabric. You have several multi-million row Delta tables stored in a Fabric Lakehouse. You need to create a Power BI semantic model that achieves the query speed of Import mode but without the overhead of importing data, duplicating data, or scheduling refreshes. Which storage mode should you select for your semantic model?",
+    "options": [
+      "DirectQuery",
+      "Direct Lake",
+      "Dual storage mode",
+      "Import mode with incremental refresh"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD004",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "In Power Query Editor, you enable Column Profiling and select a column named CustomerID. The column statistics pane displays the following metrics:\n- Count: 1,000\n- Distinct: 950\n- Unique: 100\n- Error: 0\n- Empty: 0\n\nWhat can you infer about the values in the CustomerID column?",
+    "options": [
+      "The column has exactly 900 null values and 100 non-null values.",
+      "There are 100 values that appear exactly once, and the remaining 850 distinct values appear multiple times.",
+      "All 1,000 rows contain unique values, but 50 of them are duplicate blank strings.",
+      "The column contains 950 unique customer records, and 50 records are missing completely."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD005",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You have two tables in Power Query: Sales (containing daily transaction records) and MonthlyTargets (containing targets per region per month). You need to merge these tables based on both the Region column and the Month column. What is the correct way to configure this in the Merge Queries window?",
+    "options": [
+      "Merge the queries using only the Region column, load to the model, and create a calculated relationship on the Month column.",
+      "Concatenate Region and Month into a custom column in both tables within Power Query, and then merge using the new concatenated column.",
+      "Select the Region column, hold Ctrl and select the Month column in both the Sales and MonthlyTargets tables in the exact same sequence.",
+      "Perform a Cartesian join (cross join) between the two tables, and then filter out rows where the Month columns do not match."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "PD006",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Easy",
+    "question": "Your company migrates its backend SQL database to a new server. As a result, the server name for your source connection has changed. You need to update your Power BI Desktop semantic model to point to the new SQL Server without recreating any of the existing Power Query transformation steps. What should you do?",
+    "options": [
+      "Delete the existing queries, create a new SQL Server connection, and reapply all transformations.",
+      "Go to File > Options and settings > Data source settings, select the database, click Change Source, and enter the new server name.",
+      "Open the Advanced Editor for each query individually and write a new connection string from scratch.",
+      "Modify the server name in the local Power BI Desktop XML configuration files."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD007",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Hard",
+    "question": "You are designing a semantic model that connects to a SQL Server database. The development and production environments have identical schemas but different server addresses. You want to configure the model so that business users can easily switch the data source connection between Dev and Prod after publishing the report to the Power BI Service, without editing the Power Query M code directly. What should you do?",
+    "options": [
+      "Create a SQL view that references both databases, and filter the view using a DAX slicer in the report.",
+      "Create two separate Power BI files (.pbix), one for Dev and one for Prod, and merge them in a deployment pipeline.",
+      "Define M parameters for the Server and Database name, configure the source steps to reference these parameters, and then set up parameter rules in a deployment pipeline or semantic model settings.",
+      "Create a dynamic M query function that tests connections sequentially and falls back to Prod if Dev is offline."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "PD008",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You are importing data from a web API that returns a JSON structure. One column in the raw imported table is named 'Orders' and has a type of 'List'. Each item in the list represents a nested record containing multiple transaction fields. How should you transform this column in Power Query Editor to analyze individual orders in a flat table layout?",
+    "options": [
+      "Right-click the 'Orders' column and change its data type directly to Text.",
+      "Select the 'Orders' column, choose 'Extract Values', and select a comma separator.",
+      "Click the expand button on the 'Orders' column header to 'Expand to New Rows', and then click the expand button again to select individual record fields.",
+      "Use the Pivot Column transformation on the 'Orders' column using 'Count' as the aggregate function."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "PD009",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You are importing a CSV file containing monthly financial data. The column 'Amount' contains a mix of currency symbols, numbers, and text values such as 'N/A' for missing entries. When you attempt to change the data type of 'Amount' to 'Decimal Number', several rows show 'Error'. What is the best sequence of transformation steps to resolve these errors and preserve data integrity?",
+    "options": [
+      "Change the data type to 'Decimal Number', select the column, and choose 'Remove Errors'.",
+      "Replace the text 'N/A' with '0' or 'null', extract/remove non-numeric currency characters, and then change the data type to 'Decimal Number'.",
+      "Duplicate the column, keep the original as text, and use a conditional DAX column in the model to parse the numeric values.",
+      "Change the data type of the column to 'Text' and let Power BI handle the decimal conversion during visual rendering."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD010",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Easy",
+    "question": "You receive a source table from an external system with columns: ProductID, Q1_Sales, Q2_Sales, Q3_Sales, and Q4_Sales. You want to load this data into a star schema format where quarterly sales are tracked in a single continuous column. Which transformation should you apply in Power Query Editor?",
+    "options": [
+      "Select ProductID, right-click, and select 'Pivot Column'.",
+      "Select all quarterly sales columns and click 'Transpose'.",
+      "Select ProductID, right-click, and select 'Unpivot Other Columns'.",
+      "Select all quarterly columns, right-click, and select 'Group By'."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "PD011",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Hard",
+    "question": "You have a Power Query query named 'RawData' that connects to an OData feed. You need to create two separate tables for your data model: 'ActiveAccounts' and 'ArchivedAccounts'. To minimize source API calls and reuse the shared transformation steps from 'RawData', you want to configure the queries appropriately. What is the best-practice design in Power Query?",
+    "options": [
+      "Duplicate the 'RawData' query twice to create 'ActiveAccounts' and 'ArchivedAccounts', and enable load for all three.",
+      "Reference the 'RawData' query to create 'ActiveAccounts' and 'ArchivedAccounts', filter each accordingly, and disable load for 'RawData'.",
+      "Convert 'RawData' into a custom M function, and call the function from two new blank queries with hardcoded parameters.",
+      "Combine 'ActiveAccounts' and 'ArchivedAccounts' into a single query using an Outer Join, and disable load for 'RawData'."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD012",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Medium",
+    "question": "You have a transaction table containing 50 million rows of daily sales data. The report requirements specify that the final dashboard only needs to show monthly aggregated sales figures by Region and Category. How should you configure your data preparation to optimize performance and reduce semantic model file size?",
+    "options": [
+      "Import all 50 million rows into the semantic model and write a DAX calculated table that aggregates the data.",
+      "Use the Power Query Group By transformation to aggregate Sales Amount by Region, Category, and the first day of the month prior to loading the data into the model.",
+      "Configure a page-level filter on the report to show only monthly sales, which will prevent the remaining daily rows from loading.",
+      "Set the storage mode of the transaction table to DirectQuery so that no rows are cached in the model."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD013",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Easy",
+    "question": "You need to generate a dynamic date table directly within Power Query Editor. What is the primary M function that you would use to generate a continuous sequence of daily dates as the starting point for your date dimension?",
+    "options": [
+      "Date.AddDays",
+      "List.Dates",
+      "DateTime.LocalNow",
+      "Table.FromRows"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "PD014",
+    "exam": "PL-300",
+    "domain": "Prepare Data",
+    "difficulty": "Hard",
+    "question": "A complex query connecting to an on-premises data source is taking an exceptionally long time to refresh. You want to identify which specific transformation step is experiencing the worst performance bottleneck. What feature should you use within the Power Query Editor in Power BI Desktop?",
+    "options": [
+      "Query Dependencies view",
+      "Performance Analyzer",
+      "Query Diagnostics (Start Diagnostics / Stop Diagnostics)",
+      "DAX Query View"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MD001",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Easy",
+    "question": "You are building a relationship in your semantic model between the DimProduct table (which has unique product codes in ProductKey) and the FactSales table (which has multiple sales lines for each product code in ProductKey). How should you configure the relationship cardinality?",
+    "options": [
+      "Many-to-many (*:*)",
+      "One-to-one (1:1)",
+      "Many-to-one (*:1) where DimProduct is on the many side",
+      "One-to-many (1:*) where DimProduct is on the one side and FactSales is on the many side"
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "id": "MD002",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "You have a star schema containing FactSales, DimCustomer, and DimProduct. You need to create a visual that displays a count of customers who have purchased a selected product. How should you configure the relationship cross-filter direction to support this requirement while maintaining data modeling best practices?",
+    "options": [
+      "Set the cross-filter direction between DimProduct and FactSales to 'Both'.",
+      "Set the cross-filter direction of all model relationships to 'Both'.",
+      "Keep all relationships to 'Single', and use a DAX measure that counts customers using CALCULATE with CROSSFILTER or a dynamic filter structure.",
+      "Use an active bidirectional relationship between DimCustomer and DimProduct directly."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MD003",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "You are managing a highly complex semantic model with dozens of base financial measures (such as Total Revenue, Total Cost, and Gross Profit). You need to add five distinct time intelligence variations (such as Year-to-Date, Month-to-Date, Year-over-Year Change) for every base measure. What is the most efficient and scalable modeling technique to implement this without creating hundreds of individual DAX measures?",
+    "options": [
+      "Create a calculated column in the Date table for each time intelligence period.",
+      "Implement a Calculation Group using DAX Query View or external tools, defining a calculation item for each time intelligence pattern.",
+      "Use the DAX Quick Measure feature to automatically generate individual measures for each combination.",
+      "Duplicate the sales table for each time period and create separate active relationships."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD004",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "Your semantic model contains a FactOrders table with three date columns: OrderDate, ShippingDate, and DeliveryDate. You have a single date dimension table named DimDate. You need to build a report where a single visual can display 'Sales by Order Date' and another visual can display 'Sales by Shipping Date' simultaneously. What is the correct way to model this role-playing dimension scenario?",
+    "options": [
+      "Create three active relationships between DimDate and FactOrders, and let Power BI automatically determine the filter context.",
+      "Create three separate copies of the DimDate table in Power Query (DimOrderDate, DimShippingDate, DimDeliveryDate), and link each to its corresponding column in FactOrders.",
+      "Create one active relationship for OrderDate and two inactive relationships for ShippingDate and DeliveryDate, and use USERELATIONSHIP in specific DAX measures.",
+      "Configure a bidirectional many-to-many relationship on a composite key composed of all three dates."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MD005",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "You write a DAX measure to calculate the percentage contribution of a selected product category to the total sales of all products. You want the calculation to respect any external slicers applied to other tables (such as Customer Region) but ignore filters applied directly to the product category slicer. Which DAX formula is correct?",
+    "options": [
+      "Sales Contribution = DIVIDE(SUM(Sales[Amount]), CALCULATE(SUM(Sales[Amount]), ALL(Sales)))",
+      "Sales Contribution = DIVIDE(SUM(Sales[Amount]), CALCULATE(SUM(Sales[Amount]), ALLSELECTED(DimProduct[Category])))",
+      "Sales Contribution = DIVIDE(SUM(Sales[Amount]), CALCULATE(SUM(Sales[Amount]), ALL(DimProduct[Category])))",
+      "Sales Contribution = DIVIDE(SUM(Sales[Amount]), CALCULATE(SUM(Sales[Amount]), KEEPFILTERS(DimProduct)))"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MD006",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "You are developing a financial report in Power BI. You need to calculate a 10% administrative fee for every individual sales transaction in the FactSales table (which has 5 million rows). This fee must be aggregated and sliceable by region, product, and date. Which option represents the best practice for performance and model size?",
+    "options": [
+      "Create a calculated column: Sales[AdminFee] = Sales[Amount] * 0.10, and sum it in your visuals.",
+      "Create a DAX measure: AdminFee = SUMX(FactSales, FactSales[Amount] * 0.10) to compute the calculation dynamically.",
+      "Perform the multiplication in Power Query by adding a custom column and setting its type to Decimal Number.",
+      "Use Excel to pre-calculate the administrative fee before importing the data."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD007",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Easy",
+    "question": "You attempt to write a DAX time intelligence measure: YTD_Sales = TOTALYTD(SUM(Sales[Amount]), DimDate[FullDate]). When you add this measure to a visual, the values returned are incorrect and do not accumulate. What is the most likely cause of this issue?",
+    "options": [
+      "The Sales[Amount] column contains text data instead of decimals.",
+      "The DimDate table has not been marked as a Date Table in Power BI Desktop, or its date column contains missing dates.",
+      "The TOTALYTD function is deprecated and should be replaced with CALCULATE.",
+      "The active relationship between DimDate and Sales is configured as One-to-One."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD008",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "You have a base measure: TotalSales = SUM(Sales[Amount]). You write a secondary measure: BlueSales = CALCULATE([TotalSales], DimProduct[Color] = \"Blue\"). If a user adds 'BlueSales' to a table visual grouped by 'DimProduct[Color]' and filters the report page to only show 'Red' products, what will the visual display?",
+    "options": [
+      "The visual will display 'Blank' for all rows because the filter on 'Red' conflicts with 'Blue'.",
+      "The visual will show the sales for 'Red' products because the external page-level filter overrides CALCULATE.",
+      "The visual will display sales only for 'Blue' products, overwriting the external page-level filter on the Color column.",
+      "The visual will return an error stating that a circular filter context conflict was detected."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MD009",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "You are designing an inventory semantic model. The table FactInventory holds daily snapshots of stock quantities for various warehouse products. If you aggregate this stock quantity over a Month or Year time frame, a standard SUM aggregation will produce a misleadingly high inventory figure. You need to write a DAX measure that returns the last recorded stock quantity within any selected period. What is the correct DAX formula?",
+    "options": [
+      "Closing Stock = SUMX(FactInventory, FactInventory[StockQuantity])",
+      "Closing Stock = CALCULATE(SUM(FactInventory[StockQuantity]), LASTDATE(DimDate[Date]))",
+      "Closing Stock = CALCULATE(SUM(FactInventory[StockQuantity]), ALL(DimDate))",
+      "Closing Stock = AVERAGE(FactInventory[StockQuantity])"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD010",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "A business user complains that a specific matrix visual in a published report is taking more than 10 seconds to render when slicers are changed. You want to capture the exact DAX query generated by the visual and analyze its execution plan and speed. What is the best-practice workflow?",
+    "options": [
+      "Open the Power Query Advanced Editor and analyze the M query performance history.",
+      "Open Power BI Desktop, use Performance Analyzer to record the action, copy the query, and run it in DAX Query View to debug and test performance.",
+      "Export the data from the slow matrix visual to a CSV file and look at the file size.",
+      "Increase the memory limit of Power BI Desktop under Options > Global > Data Load."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD011",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Easy",
+    "question": "You need to create a new disconnected lookup table in your model that contains only the unique regions from your Sales table. You want this table to update automatically whenever new regions appear in the raw data. What is the most appropriate DAX calculated table formula?",
+    "options": [
+      "Regions = SUMMARIZE(Sales, Sales[RegionKey])",
+      "Regions = VALUES(Sales[Region])",
+      "Regions = LOOKUPVALUE(Sales[Region], Sales[Region], Sales[Region])",
+      "Regions = RELATED(Sales[Region])"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD012",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Hard",
+    "question": "You have a semantic model with DimDate and FactSales. The active relationship is between DimDate[Date] and FactSales[OrderDate]. There is also an inactive relationship between DimDate[Date] and FactSales[ShipDate]. You write a DAX measure:\n\nShipped Revenue = CALCULATE(SUM(FactSales[Amount]), USERELATIONSHIP(FactSales[ShipDate], DimDate[Date]))\n\nWhen Shipped Revenue is calculated in a visual, what is the exact status of the model's relationships?",
+    "options": [
+      "Both relationships are active simultaneously, and the filters from both dates are combined using an AND condition.",
+      "The inactive relationship on ShipDate becomes active, and the active relationship on OrderDate remains active and dominates.",
+      "The active relationship on OrderDate is temporarily deactivated, and the inactive relationship on ShipDate becomes the sole active relationship between the tables for this calculation.",
+      "The relationship is evaluated using a cross-join, bypassing all physical relationship definitions between the two tables."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MD013",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "An analyst configures all physical relationships in a snowflake schema to use a cross-filter direction of 'Both'. When the semantic model size grows and users begin running complex queries, they notice slow rendering times and occasional unexpected/incorrect visual filtering behavior. What is the underlying cause?",
+    "options": [
+      "Setting relationships to 'Both' causes Power BI to duplicate the underlying data tables in memory.",
+      "Bidirectional filtering introduces circular filter paths and performance bottlenecks, as queries are forced to propagate filters in multiple directions across tables.",
+      "Power BI disables column indexing when bidirectional filtering is turned on.",
+      "The storage engine is forced to convert all Import tables into DirectQuery tables dynamically."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MD014",
+    "exam": "PL-300",
+    "domain": "Model Data",
+    "difficulty": "Medium",
+    "question": "You are a business analyst who is comfortable with basic reports but not proficient in writing complex DAX formulas. You need to calculate a rolling 12-month average of total sales. What built-in Power BI Desktop feature can help you generate this calculation without requiring you to write code from scratch?",
+    "options": [
+      "Smart Narratives",
+      "Quick Measures",
+      "Visual Calculations",
+      "AI Insights"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA001",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Easy",
+    "question": "You want to design a report page where users can interactively change the primary categorical axis of a chart. Users must be able to choose whether the bar chart aggregates data by Product Category, Customer Country, or Sales Representative. What feature should you implement?",
+    "options": [
+      "Drillthrough",
+      "Field Parameters",
+      "Bookmarks and visual groupings",
+      "Tooltips"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA002",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "You are designing a sales dashboard. You need to identify the factors and attributes (such as product color, shipping class, or region) that are most strongly correlated with a high rate of customer product returns. Which visual should you add to the report page?",
+    "options": [
+      "Decomposition Tree",
+      "Key Influencers",
+      "Q&A",
+      "Line and Stacked Column Chart"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA003",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Hard",
+    "question": "You create a Power BI bookmark that displays a line chart instead of a bar chart on your report page. A user opens the report, selects 'Europe' from a country slicer, and then clicks the bookmark you created. They complain that clicking the bookmark resets their slicer selection back to showing all global data. How should you fix this?",
+    "options": [
+      "Uncheck the 'Data' property on the bookmark in the Bookmarks pane.",
+      "Uncheck the 'Display' property on the bookmark in the Bookmarks pane.",
+      "Set the 'Type' of the bookmark to 'Selected Visuals' and select only the slicer.",
+      "Configure the bookmark to use a page-level sync slicer."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "VA004",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "Your executive team needs to explore total operating expenses. They want to start at the high-level total and interactively break it down by Department, then by Cost Center, and then by Expense Type. They want the flexibility to split the data in any order they choose at runtime. Which Power BI visual is best suited for this task?",
+    "options": [
+      "Key Influencers",
+      "Decomposition Tree",
+      "Waterfall Chart",
+      "Ribbon Chart"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA005",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Easy",
+    "question": "You have a high-level executive dashboard page showing sales summaries per Product Category. You want users to be able to right-click a specific Product Category block on this page and navigate to a separate, highly detailed report page that is pre-filtered for the selected category. Which visual feature must you configure?",
+    "options": [
+      "Bookmarks",
+      "Edit Interactions",
+      "Drillthrough",
+      "Sync Slicers"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "VA006",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "You want to enhance a bar chart visual that shows Sales by Product. When a user hovers their cursor over a product's bar, you want a miniature line chart to appear in a hover window showing the last 12 months' sales trend for that product. What are the correct steps to build this?",
+    "options": [
+      "Add a line chart visual directly on top of the bar chart and set its transparency to 100%.",
+      "Create a new report page, configure its Page Type to 'Tooltip' in the Canvas Settings, build the line chart on this page, and then configure the bar chart's Tooltip settings to reference this page.",
+      "Enable the 'Smart Narrative' option on the bar chart visual and configure a custom dynamic value.",
+      "Add a Drillthrough action on the bar chart and set the target page to the line chart."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA007",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Hard",
+    "question": "You are configuring a matrix visual and want to calculate a running total of your sales column directly within the visual layout itself, without adding a new measure to your semantic model or writing complex CALCULATE-based DAX. What is the correct approach to achieve this using modern Power BI features?",
+    "options": [
+      "Create a calculated column in the underlying table using the SUM function.",
+      "Right-click the measure in the visual bucket, select 'Show value as', and choose 'Running total'.",
+      "Use the 'Visual Calculations' feature directly in the visual's edit mode and write a DAX visual calculation using RUNNINGSUM.",
+      "Configure a Quick Measure for rolling average and select 1 period."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "VA008",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "You are asked to add a section to a dashboard that provides a clear, natural-language written summary of sales trends. This summary must automatically update its text description when users filter the report page. What is the most efficient way to implement this feature using generative AI/automated analysis?",
+    "options": [
+      "Use Copilot to generate a text box, copy the text, and paste it into a static label on the report.",
+      "Add a narrative visual with Copilot (or Smart Narrative visual) to the report page and let it summarize the underlying semantic model data dynamically.",
+      "Write a complex DAX measure using string concatenation and switch functions that outputs custom text sentences.",
+      "Embed an Power Apps visual that links to a custom OpenAI API backend."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA009",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Easy",
+    "question": "You have a table visual showing Sales and Profit Margin by region. You want to highlight rows with negative profit margins with a red background and positive margins with a green background. What formatting option should you apply?",
+    "options": [
+      "Apply a custom theme JSON file.",
+      "Use Conditional Formatting on the Profit Margin column, configuring Rules based on value ranges.",
+      "Create a calculated column in Power Query that returns the text string 'Red' or 'Green'.",
+      "Change the column data type of Profit Margin to 'Image URL'."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA010",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "A report page contains a Year slicer and two visual cards: 'Current Year Sales' and 'All-Time Target'. When a user selects a year, both visuals are updated. You want 'All-Time Target' to ignore the Year slicer and remain static. What should you configure?",
+    "options": [
+      "Select the Year slicer, go to the Format menu, click 'Edit Interactions', and select the 'None' icon above the 'All-Time Target' card.",
+      "Go to the Selection pane and hide the 'All-Time Target' card when the slicer is selected.",
+      "Configure a sync slicer group and uncheck the sync box for the target page.",
+      "Modify the target card's DAX formula to wrap the aggregation inside the KEEPFILTERS function."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "VA011",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Hard",
+    "question": "You have a line chart displaying daily sales over the past two years. You want to add a 30-day forecast with a 95% confidence interval using the built-in analytics engine. When you navigate to the Analytics pane in Power BI Desktop, you find that the Forecast option is completely missing. What is the most likely cause?",
+    "options": [
+      "You are using a DirectQuery storage mode, which does not support analytics forecasting.",
+      "The date column on the X-axis is set to Categorical instead of Continuous, or contains non-uniform time gaps.",
+      "The Analytics pane options are only available for Premium capacities.",
+      "You must enable the forecasting feature in the Power BI Service admin portal settings."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA012",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Medium",
+    "question": "You are designing a report with three pages: Summary, Details, and Regional Analysis. You want to add a Regional slicer to the Summary page. When a user selects a region on the Summary page, the Details page should automatically filter to that same region, but you do not want to show the physical slicer visual on the Details page itself. How should you configure this?",
+    "options": [
+      "Copy the slicer to the Details page and set its visibility to Hidden in the Selection pane.",
+      "Open the Sync Slicers pane, enable sync between the Summary and Details pages for the Regional slicer, but only enable visibility for the Summary page.",
+      "Create a bookmark that saves the slicer selection and set it to automatically trigger on page navigation.",
+      "Define the Regional column as a drillthrough field on the Details page."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA013",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Easy",
+    "question": "You want to design a report page that complies with corporate accessibility standards. Visually impaired users must be able to navigate the visuals on the page logically using a keyboard and a screen reader. How can you control the precise sequence in which the screen reader navigates through the page's visuals?",
+    "options": [
+      "Use the 'Bring Forward' and 'Send Backward' layout tools on the Format tab.",
+      "Configure the 'Tab Order' in the Selection pane of Power BI Desktop.",
+      "Set the 'Z-Order' of the visuals in the formatting pane settings.",
+      "Group the visuals together and arrange them in alphabetical order."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "VA014",
+    "exam": "PL-300",
+    "domain": "Visualize & Analyze",
+    "difficulty": "Hard",
+    "question": "You are monitoring automated temperature loggers in a cold storage warehouse. You want to configure your report so that any sudden, unexpected temperature spikes or drops are automatically highlighted on a line chart visual without manual range-checking calculations. Which feature should you use?",
+    "options": [
+      "Add an average reference line in the Analytics pane.",
+      "Enable 'Anomaly Detection' (Find Anomalies) on the line chart visual within the Analytics pane.",
+      "Create a standard deviation calculated column in the data model.",
+      "Configure a Smart Narrative visual to search for outlier text strings."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MS001",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Easy",
+    "question": "You are sharing a workspace in the Power BI Service with a group of colleagues. You want them to be able to view and interact with reports and dashboards, but you must prevent them from modifying any reports, publishing new content, or managing permissions. Which workspace role should you assign them?",
+    "options": [
+      "Contributor",
+      "Viewer",
+      "Member",
+      "Admin"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MS002",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Medium",
+    "question": "You are implementing dynamic Row-Level Security (RLS) in a sales report. You have a table containing a list of employees and their corporate email addresses: Employees[Email]. You want to ensure that when an employee opens the report, they can only view rows in the Sales table where the Region matches their assigned region. What DAX filter expression should you apply to the security role on the Employees table?",
+    "options": [
+      "[Email] = USERNAME()",
+      "[Email] = USERPRINCIPALNAME()",
+      "[Email] = LOOKUPVALUE(Employees[Email], Employees[Email], USERNAME())",
+      "CUSTOMDATA() = [Email]"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MS003",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Hard",
+    "question": "Your semantic model contains a sensitive column: Employees[HourlyRate]. You need to ensure that members of the HR department can view this column in reports, but all other users are blocked from viewing or even referencing this column in calculations. Crucially, visuals displaying other columns from the Employees table (such as Employee Name or Role) must still work for non-HR users. What security feature should you implement?",
+    "options": [
+      "Row-Level Security (RLS)",
+      "Microsoft Purview Sensitivity Labels with customized folder encryption",
+      "Object-Level Security (OLS) configured on the HourlyRate column via Tabular Editor",
+      "Separate workspaces for HR and non-HR users with duplicated semantic models"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MS004",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Medium",
+    "question": "You are using Power BI deployment pipelines to manage content across Development, Test, and Production stages. You need to ensure that when you deploy a semantic model from Test to Production, it automatically points to the production SQL Server database instead of the test SQL Server database. How should you achieve this?",
+    "options": [
+      "Manually modify the M code in Power BI Desktop and publish directly to the Production workspace.",
+      "Configure 'Data source rules' or 'Parameter rules' in the deployment settings of the Production stage in the deployment pipeline.",
+      "Write a PowerShell script that executes after deployment to rewrite the connection string.",
+      "Use different gateways for the Test and Production stages and rename them identically."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MS005",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Easy",
+    "question": "You publish a report to the Power BI Service that connects to an on-premises Microsoft SQL Server database. You want to configure an automated daily scheduled refresh of this semantic model. What is a mandatory prerequisite to enable this refresh?",
+    "options": [
+      "The Power BI report must be shared with a Microsoft Entra ID security group.",
+      "The semantic model must be converted to use Direct Lake storage mode.",
+      "An On-premises Data Gateway must be installed and configured with appropriate data source credentials.",
+      "You must assign a Premium Per User (PPU) license to every viewer of the report."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": "MS006",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Hard",
+    "question": "You have a semantic model configured in DirectQuery mode that connects to a large corporate Azure Synapse Analytics database. You implement Row-Level Security (RLS) on the model. Users report that when they open the report, the visuals take a long time to load compared to when RLS is disabled. What is a recommended best practice to optimize RLS performance in this DirectQuery scenario?",
+    "options": [
+      "Enable 'Assume referential integrity' on relationships, ensure columns used in the security mapping have index coverage in Synapse, and keep RLS filters as simple as possible.",
+      "Increase the refresh frequency of the deployment pipeline to hourly.",
+      "Convert the model's storage mode to Dual for the dimension tables and keep the fact table on Import.",
+      "Use Object-Level Security (OLS) instead of Row-Level Security."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "MS007",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Medium",
+    "question": "Your organization has a strict corporate security policy regarding financial data. You want to ensure that whenever an analyst exports data from your sales report to Excel or a PDF, the exported file inherits the corporate security policies, applies encryption, and restricts access to unauthorized external users. What should you apply to your Power BI content?",
+    "options": [
+      "Object-Level Security (OLS)",
+      "Microsoft Purview Information Protection Sensitivity Labels",
+      "Power BI Workspace Admin permissions",
+      "A Row-Level Security role named 'Export_Blocked'"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": "MS008",
+    "exam": "PL-300",
+    "domain": "Manage & Secure",
+    "difficulty": "Medium",
+    "question": "You have developed five interconnected reports and two dashboards in a single workspace. You want to share this entire suite of content with 500 business stakeholders in your organization, providing them with a streamlined, polished, read-only navigation experience. You want to make sure they do not see any incomplete draft reports in the workspace. What is the best method of distribution?",
+    "options": [
+      "Add all 500 users as Viewers directly to the workspace.",
+      "Publish a Power BI App from the workspace, select the completed reports to be included, and grant access to the 500 users.",
+      "Export all reports to PDF and email them as attachments daily.",
+      "Share the individual .pbix files via a corporate OneDrive folder."
+    ],
+    "correctAnswer": 1
+  }
+]
